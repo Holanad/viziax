@@ -58,7 +58,7 @@ label.error {
 
 .header {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     &-wrapper {
         position: relative;
         display: flex;
@@ -245,6 +245,7 @@ label.error {
     z-index: 2;
     border-top: 1px solid rgba(217, 217, 217, 0.56);
     border-bottom: 1px solid rgba(217, 217, 217, 0.56);
+    transition: $anim-default;
     &-list {
         display: flex;
         justify-content: space-between;
@@ -259,6 +260,13 @@ label.error {
             line-height: 34px;
             font-family: 'Inter Bold';
             letter-spacing: 0.12em;
+            transition: $anim-default;
+        }
+    }
+    &-sticky {
+        background: #209269;
+        .navigation-item__link {
+            color: #fff;
         }
     }
 }

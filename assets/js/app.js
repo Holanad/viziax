@@ -12,10 +12,9 @@ const swiperIntro = new Swiper(".intro-slider", {
         el: ".intro-slider-pagination",
         clickable: true,
     },
-    /*navigation: {
-        nextEl: ".intro-slider-manager__next",
-        prevEl: ".intro-slider-manager__prev",
-    },*/
+    autoplay: {
+        delay: 4000,
+    },
 });
 
 
@@ -24,14 +23,24 @@ const swiperIntro = new Swiper(".intro-slider", {
 $(document).ready(function() {
 
     // lang
-    function langItems () {
+    function langItems() {
         $('.header-lang').click(function() {
             $(this).toggleClass('active');
         })
     }
     langItems()
 
-
+    function stickyNavigationBG() {
+        let headerHeight = $('.header').height();
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > headerHeight) {
+                $('.navigation').addClass('navigation-sticky');
+            } else {
+                $('.navigation').removeClass('navigation-sticky');
+            }
+        })
+    }
+    stickyNavigationBG();
 
 
 

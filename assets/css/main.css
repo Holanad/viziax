@@ -228,7 +228,7 @@ label.error {
 
 .header {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .header-wrapper {
@@ -478,6 +478,8 @@ label.error {
   z-index: 2;
   border-top: 1px solid rgba(217, 217, 217, 0.56);
   border-bottom: 1px solid rgba(217, 217, 217, 0.56);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .navigation-list {
@@ -500,6 +502,16 @@ label.error {
   line-height: 34px;
   font-family: 'Inter Bold';
   letter-spacing: 0.12em;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navigation-sticky {
+  background: #209269;
+}
+
+.navigation-sticky .navigation-item__link {
+  color: #fff;
 }
 
 .intro__slogan {
