@@ -164,7 +164,6 @@ input[type=text] {
   appearance: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-radius: 0;
 }
 
 textarea {

@@ -28,10 +28,16 @@ $(document).ready(function() {
             $(this).toggleClass('active');
         })
     }
-    langItems()
+    langItems();
 
+    //stickyNavigationBG
     function stickyNavigationBG() {
         let headerHeight = $('.header').height();
+        if ($(window).scrollTop() > headerHeight) {
+            $('.navigation').addClass('navigation-sticky');
+        } else {
+            $('.navigation').removeClass('navigation-sticky');
+        }
         $(window).scroll(function() {
             if ($(window).scrollTop() > headerHeight) {
                 $('.navigation').addClass('navigation-sticky');
@@ -42,21 +48,6 @@ $(document).ready(function() {
     }
     stickyNavigationBG();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // accordion
     function accordion() {
         $(".accordion").click(function(){
@@ -65,6 +56,22 @@ $(document).ready(function() {
         });
     };
     accordion();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Arrow UP
     function scrollUp () {
@@ -104,15 +111,11 @@ $(document).ready(function() {
     modal();
     //Валидации сайта
     function formValidate() {
-        $('.question-form').validate({
+        $('.consultation-form').validate({
             rules: {
                 name: {
                     required: true,
                     minlength: 2
-                },
-                email: {
-                    required: true,
-                    minlength: 5
                 },
                 phone: {
                     required: true,
@@ -123,40 +126,6 @@ $(document).ready(function() {
                 name: {
                     required: "Заполните поле",
                     minlength: "Должно быть не менее: 2 символов"
-                },
-                email: {
-                    required: "Заполните поле",
-                    minlength: "Должно быть не менее: 5 символов"
-                },
-                phone: {
-                    required: "Заполните поле",
-                    minlength: "Должно быть не менее: 5 символов"
-                }
-            }
-        });
-        $('.popup-form').validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                comment: {
-                    required: true,
-                    minlength: 5
-                },
-                phone: {
-                    required: true,
-                    minlength: 5
-                }
-            },
-            messages: {
-                name: {
-                    required: "Заполните поле",
-                    minlength: "Должно быть не менее: 2 символов"
-                },
-                comment: {
-                    required: "Заполните поле",
-                    minlength: "Должно быть не менее: 5 символов"
                 },
                 phone: {
                     required: "Заполните поле",
